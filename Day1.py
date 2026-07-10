@@ -65,3 +65,90 @@ print(even_square)
 names=["pavan","karan","karthik"]
 name_length={name:len(name) for name in names}
 print(name_length)
+
+
+
+# Part 4 — Practice Questions (~30 min)
+# Answers mat dhundo, pehle khud sochke likho:
+
+# List aur Tuple mein core difference kya hai — sirf [ ] vs ( ) syntax ke alawa?
+# -> List ek mutable collection hai jisse ki hum usme k items ya elements modify kar sakte hai aur isme hum duplicate elements rak sakte hai  aur tuple ek immutable collection hai jisme hun elements ko change nahi kar sakte per usme duplicate elements bhi allow kar sakte hai.
+# Ek real scenario batao jaha tum List ki jagah Set use karoge.
+# -> hum set ko customer bank accounts ya customer mobile mumbers etc 
+# dict.get() use karne ka fayda kya hai directly dict[key] likhne ke comparison mein?
+# -> dict.get() ka use karne ka fayda ye hai ki agar key exist nahi karti hai to ye None return karega ya hum default value bhi de sakte hai, jabki dict[key] use karne par agar key exist nahi karti hai to ye KeyError raise karega.
+# MCQ — Konsa structure duplicate elements allow nahi karta? (a) List (b) Tuple (c) Set (d) Dict
+# -> (c) Set
+# MCQ — (1, 2, 3) kis type ka hai? (a) List (b) Tuple (c) Set (d) Dict
+# -> (b) Tuple
+# Debug: Iska output predict karo aur bug batao:
+
+# python   
+nums = [1, 2, 2, 3, 4]
+for n in nums:
+    if n == 2:
+        nums.remove(n)
+print(nums)
+# -> Output: [1, 3, 4]
+# -> Reason: Jab hum list ke elements ko iterate karte hai aur usme se elements remove karte hai to ye iteration ke dauran list ke size ko change kar deta hai jisse ki kuch elements skip ho jate hai. Is case me jab pehla 2 remove hota hai to dusra 2 skip ho jata hai aur ye output me aa jata hai.
+
+# Coding: Function likho remove_duplicates(lst) jo list se duplicates hataye lekin original order maintain kare (hint: sirf list(set(lst)) order maintain nahi karta, socho kyun).
+
+def remove_duplicates(lst):
+    unique_list = list(set(lst))
+    return unique_list
+
+print(remove_duplicates([1, 2, 2, 3, 4]))
+# -> Output: [1, 2, 3, 4]
+
+
+# Part 5 — Mini Project #1/25 (~60 min)
+# CLI Student Grade Tracker
+# Requirements:
+
+# Students ko store karo list of dicts mein: {"name": ..., "marks": [...]}
+# Function: naya student add karo
+# Function: sabki average marks calculate karo
+# Function: topper student find karo
+# Clean function names, docstrings, English comments
+
+# Project1: CLI Student Grade Tracker
+Students=[]
+def Add_Students(name,marks):
+    """
+    Add a new student to the Students dictionary.
+    
+    Parameters:
+    name (str): The name of the student.
+    marks (list): A list of marks for the student.
+    """
+    Students[name]=marks
+    return Students
+
+Add_Students("John",[85,90,78])
+Add_Students("Alice",[92,88,95])
+print(Students)
+
+# sabki average marks calculate karo
+def Calculate_Average():
+    """
+    Calculate the average marks for each student in the Students dictionary.
+    
+    Returns:
+    dict: A dictionary with student names as keys and their average marks as values.
+    """
+    Average_Marks={}
+    for name,marks in Students.items():
+        Average_Marks[name]=sum(marks)/len(marks)
+    return Average_Marks
+
+def Topper():
+    """
+    Find the topper student in the Students dictionary.
+    
+    Returns:
+    str: The name of the topper student.
+    """
+    Average_Marks=Calculate_Average()
+    topper=max(Average_Marks,key=Average_Marks.get)
+    return topper
