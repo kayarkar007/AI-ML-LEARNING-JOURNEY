@@ -1,0 +1,64 @@
+# 🚀 AI-ML Learning Journey
+
+A structured, hands-on journey to learn AI & Machine Learning from scratch — week by week, day by day.
+
+---
+
+## 📁 Repository Structure
+
+```
+AI-ML-Journy/
+└── Week1/
+    ├── Day1.py       # Python Data Structures + Mini Project
+    └── README.md     # This file
+```
+
+---
+
+## 📅 Week 1 — Python Foundations for AI/ML
+
+### 🔹 Day 1: Data Structures + Practice + Mini Project
+
+**Topics Covered:**
+- **Lists** — Ordered, mutable collections with duplicate support
+- **Tuples** — Ordered, immutable collections (memory efficient)
+- **Dictionaries** — Key-value pairs for fast lookups
+- **Sets** — Unordered collections with unique elements
+- **Comprehensions** — List & dictionary comprehensions
+
+**Practice Questions (Part 4):**
+- List vs Tuple — core difference beyond syntax
+- Real-world use case for Set over List
+- `dict.get()` vs `dict[key]` — advantages
+- MCQs on data structures
+- Debug challenge — iterating & removing from a list
+- `remove_duplicates()` — function to remove duplicates while preserving order
+
+**Mini Project #1/25: CLI Student Grade Tracker (Part 5):**
+- Store students as dictionary with name-marks mapping
+- `Add_Students()` — Add a new student with marks
+- `Calculate_Average()` — Compute average marks per student
+- `Topper()` — Find the student with highest average
+
+---
+
+## 🛠️ How to Run
+
+```bash
+cd Week1
+python Day1.py
+```
+
+---
+
+## 📌 Progress Tracker
+
+| Week | Day | Topic | Status |
+|------|-----|-------|--------|
+| 1 | 1 | Data Structures + Practice + Mini Project | ✅ Done |
+
+---
+
+## 👤 Author
+
+**Pavan Kalyan** — Learning AI/ML one day at a time 💪
